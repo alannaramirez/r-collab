@@ -1,4 +1,5 @@
 # r-collab
 collaborating with partner 2
 
-time for some conflict :)  
+This is me writing code! I'm really good at this!
+
