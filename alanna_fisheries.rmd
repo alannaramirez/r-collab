@@ -14,6 +14,8 @@ library(janitor)
 library(paletteer)
 ```
 
+![](https://octodex.github.com/images/snowtocat_final.jpg)
+
 Read in noaa_landings.csv:
 ```{r}
 us_landings <- read_csv(here("data", "noaa_landings.csv"),
