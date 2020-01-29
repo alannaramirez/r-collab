@@ -12,6 +12,7 @@ library(tidyverse)
 library(here)
 # install.packages("janitor")
 library(janitor)
+library(paletteer)
 ```
 
 Read in noaa_landings.csv
@@ -35,4 +36,26 @@ salmon_clean <- us_landings %>%
 ```
 
 ### Annual total value by salmon subgroup
+
+```{r}
+salmon_us_annual <- salmon_clean %>% 
+  group_by(year, subgroup) %>% 
+  summarize(
+    tot_value = sum(dollars_num, na.rm = TRUE)
+  )
+```
+
+From `salmon_us_annual`, create a line graph with year on the x-axis, and tot_value on the y-axis.  Hint: remember groupings!
+
+ggplot(data = ?, aes(x = ?, y = ?, group =?)) + geom
+
+```{r}
+ggplot(data = salmon_us_annual, aes(x = year, y = tot_value, group = subgroup)) +
+geom_line(aes(color = subgroup)) +
+  theme_bw() + 
+  labs(x = "Year", y = "US commercial salmon value (USD)" ,
+       title = "Graph by me") + 
+  scale_color_paletteer_d("ggsci::uniform_startrek")
+
+```
 
