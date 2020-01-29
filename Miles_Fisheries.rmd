@@ -59,3 +59,5 @@ geom_line(aes(color = subgroup)) +
 
 ```
 
+![](https://octodex.github.com/images/scubatocat.png)
+
